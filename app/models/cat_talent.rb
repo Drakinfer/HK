@@ -1,0 +1,2 @@
+class CatTalent < ApplicationRecord
+end

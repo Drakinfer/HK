@@ -1,0 +1,45 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  generation_id: 1
+  category: MyString
+  dex_number: 1
+  height: 1.5
+  weight: 1.5
+  breeding_id: 1
+  type_id: 1
+  type2_id: 1
+  vita: 1
+  dex: 1
+  for: 1
+  con: 1
+  end: 1
+  vol: 1
+  main_picture: MyText
+  mini_picture: MyText
+  description: MyText
+  pre_evolution_id: 1
+  pre_evolution_way: MyString
+
+two:
+  name: MyString
+  generation_id: 1
+  category: MyString
+  dex_number: 1
+  height: 1.5
+  weight: 1.5
+  breeding_id: 1
+  type_id: 1
+  type2_id: 1
+  vita: 1
+  dex: 1
+  for: 1
+  con: 1
+  end: 1
+  vol: 1
+  main_picture: MyText
+  mini_picture: MyText
+  description: MyText
+  pre_evolution_id: 1
+  pre_evolution_way: MyString

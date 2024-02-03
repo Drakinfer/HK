@@ -1,0 +1,2 @@
+class AttaqueLevel < ApplicationRecord
+end

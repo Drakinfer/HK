@@ -1,0 +1,2 @@
+class Attaque < ApplicationRecord
+end
