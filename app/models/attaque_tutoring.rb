@@ -1,0 +1,2 @@
+class AttaqueTutoring < ApplicationRecord
+end

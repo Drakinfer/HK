@@ -1,0 +1,2 @@
+class AttaqueEggMove < ApplicationRecord
+end
