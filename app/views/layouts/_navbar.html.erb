@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg bg-red">
+  <div class="container-fluid">
+    <%= image_tag("logo.png", {:class => "logo-50"}) %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "Accueil", home_index_path, {:class => "nav-link"} %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Pokédex", home_index_path, {:class => "nav-link"} %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Livres", home_index_path, {:class => "nav-link"} %>
+        </li>
+        <li class="nav-item">
+          <%= link_to image_tag("discord_logo.png", {:class => "logo-50"}), home_index_path, {:class => "nav-link"} %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Mon compte", home_index_path, {:class => "nav-link"} %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Se déconnecter", home_index_path, {:class => "nav-link"} %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Admin", home_index_path, {:class => "nav-link"} %>
+        </li>
+        <!--li class="nav-item dropdown">
+          <p class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </p>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </l-->
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>

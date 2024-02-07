@@ -66,3 +66,10 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+#bootstrap gem for style
+gem 'bootstrap', '~> 5.3.2'
+gem 'sprockets-rails'
+gem 'dartsass-sprockets'
+
+gem 'jquery-rails'
