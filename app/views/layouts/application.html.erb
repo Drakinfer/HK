@@ -1,3 +1,5 @@
+<% flash_msg = flash if flash %>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,6 +14,10 @@
 
   <body>
     <%= render partial: "layouts/navbar"%>
-    <%= yield %>
+    <%=  %>
+    <%= render 'layouts/popup_messages', {flash: flash_msg} %>
+    <div class="flex-column-center">
+      <%= yield %>
+    </div>
   </body>
 </html>
