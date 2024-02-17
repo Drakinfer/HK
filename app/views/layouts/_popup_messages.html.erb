@@ -1,0 +1,21 @@
+<% if (defined?(resource) && resource.errors.any?) || !flash.empty? %>
+  <div id="error_explanation">
+    <div class="alert alert-info alert-popup w-50 alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true" onclick="closePopup(event)">&times;</button>
+      <% if defined?(resource) && resource.errors.any? %>
+        <ul>
+          <% resource.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      <% elsif flash %>
+        <% flash.each do |type, msg| %>
+          <p>
+            <%= msg %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+

@@ -73,3 +73,5 @@ gem 'sprockets-rails'
 gem 'dartsass-sprockets'
 
 gem 'jquery-rails'
+
+gem "devise", "~> 4.9"
