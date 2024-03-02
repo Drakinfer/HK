@@ -1,0 +1,28 @@
+@import "variable";
+
+table{
+  width: 90vw;
+}
+
+th{
+  text-align: center;
+}
+
+.text-column{
+  min-width: 300px;
+  width: 30%;
+}
+
+td{
+  border-bottom: solid 1px $red;
+}
+
+.value-column, .action-column{
+  min-width: 100px;
+  width: 10%;
+}
+
+td.value-column, td.action-column{
+  text-align: center;
+}
+

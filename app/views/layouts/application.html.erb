@@ -13,11 +13,14 @@
   </head>
 
   <body>
-    <%= render partial: "layouts/navbar"%>
-    <%=  %>
-    <%= render 'layouts/popup_messages', {flash: flash_msg} %>
-    <div class="flex-column-center">
-      <%= yield %>
-    </div>
+    <%= navbar_content %>
+    <section id="main-content" class="<%= "main-width" if controller_path.start_with?('admin/') %>">
+      <%= render 'layouts/popup_messages', {flash: flash_msg} %>
+      <%= image_tag 'logo.png', class: "logo" %>
+      <h1>Hakai Kousen, le JDR stratégique Pokémon</h1>
+      <section class="w-100 flex-column-center">
+        <%= yield %>
+      </section>
+    </section>
   </body>
 </html>

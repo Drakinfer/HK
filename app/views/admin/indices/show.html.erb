@@ -1,0 +1,15 @@
+<%= sidebar do |menu| %>
+  <%= menu.element("Retour à l'index", Icons::WHITE_ARROW_LEFT.html_safe, :admin_indices_path) %>
+  <%= menu.element("Éditer", Icons::WHITE_PENCIL.html_safe, :edit_admin_index_path) %>
+  <%= menu.element("Supprimer", Icons::WHITE_TRASH.html_safe, :admin_index_url, data: { "turbo-method": :delete, confirm: 'Êtes-vous sûr ?'}) %>
+<% end %>
+
+<h2>Paragraphe <%= @index.rank %></h2>
+
+<section class="block">
+  <p>Titre : <%= @index.title %></p>
+  <p>Description :</p>
+  <p><%= @index.paraph %></p>
+  <p>Position : <%= @index.rank %></p>
+  <p>Important : <%= display_boolean(@index.important) %></p>
+</section>

@@ -1,2 +1,24 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<section id="announces">
+  <h2>Annonces</h2>
+  <% @announces.each do |announce| %>
+    <section>
+      <p><%= announce.title %></p>
+      <p><%= announce.paraph %></p>
+    </section>
+  <% end %>
+</section>
+
+<section id="indexes">
+  <% @indexes.each do |index| %>
+    <section>
+      <h3><%= index.title unless index.title.blank?%></h3>
+      <p><%= index.paraph %></p>
+    </section>
+  <% end %>
+</section>
+
+<section id="home-nav">
+  <%= link_to image_tag('pokeball.png', class: "home-logo") + "<p>Dex</p>".html_safe, home_index_path %>
+  <%= link_to Icons::BOOK.html_safe + "<p>Librairie</p>".html_safe, home_index_path %>
+  <%= link_to image_tag('discord_logo.png', class: "home-logo") + "<p>Discord</p>".html_safe, home_index_path %>
+</section>

@@ -1,0 +1,31 @@
+<% url = admin_indices_path if action_name == "new" %>
+<% method = :post if action_name == "new" %>
+
+<% url = admin_index_url if action_name == "edit" %>
+<% method = :put if action_name == "edit" %>
+
+<%= form_with model: @index, url: url, method: method, data: { turbo: false } do |form| %>
+  <div>
+    <%= form.label "Titre" %><br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label "Description" %><br>
+    <%= form.text_area :paraph %><br>
+  </div>
+
+  <div>
+    <%= form.label "Rang" %><br>
+    <%= form.number_field :rank %><br>
+  </div>
+
+  <div>
+    <%= form.label "Annonces?" %><br>
+    <%= form.check_box :important %><br>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

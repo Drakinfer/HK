@@ -6,6 +6,8 @@ import "popup";
 import "@popperjs/core"
 import "bootstrap"
 
+Turbo.start()
+
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets

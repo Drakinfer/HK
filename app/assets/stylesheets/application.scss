@@ -1,11 +1,107 @@
 @import "bootstrap";
 @import "variable";
+@import "table";
 
 .flex-column-center{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.navbar{
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#main-content{
+  margin-top: $nav-height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.main-width{
+  width: calc(100vw - $sidebar-width - 20px) !important;
+  margin-left: $sidebar-width;
+}
+
+#sidebar{
+  width: $sidebar-width;
+  background-color: $red;
+  position: fixed;
+  top: $nav-height;
+  height: calc(100vh - $nav-height);
+  left: 0
+}
+
+ul{
+  list-style: none;
+  padding-left: 10px;
+}
+
+.side-icon{
+  margin-bottom: 15px;
+}
+
+h1{
+  font-size: 30px;
+}
+
+h2{
+  font-size: 24px;
+}
+
+h3{
+  font-size: 20px;
+}
+
+#announces{
+  width: 60%;
+  border: $red 2px solid;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#announces h2{
+  text-align: center;
+}
+
+#indexes{
+  margin-top: 20px;
+}
+
+#home-nav {
+  width : 50%;
+  display: flex; /* Alignement horizontal des liens */
+  justify-content: space-around; /* Espacement entre les liens */
+  padding: 10px; /* Espacement entre les bords et les liens */
+}
+
+#home-nav a {
+  text-decoration: none; /* Optionnel : supprime le soulignement des liens */
+  color: black;
+  margin: 0 10px; /* Espacement entre les liens */
+}
+
+.home-logo {
+  width: auto; /* Garde le ratio de l'image */
+  height: 48px; /* Ajustez selon la taille souhaitée de vos logos */
+}
+
+#home-nav a svg{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#home-nav a p{
+  margin-top: 5px; /* Espacement entre l'image et le texte dans le lien */
+  text-align: center;
 }
 
 .alert-popup{
@@ -26,6 +122,7 @@
 .bg-red{
   background-color: $red;
   color: white;
+  height: $nav-height;
 }
 
 .btn{
@@ -36,8 +133,12 @@
   margin: 5px
 }
 
-.logo-50{
-  height: 50px;
+.logo{
+  height: 150px;
+}
+
+.logo-nav{
+  height: 20px;
 }
 
 .field_with_errors {
