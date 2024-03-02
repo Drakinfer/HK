@@ -1,0 +1,33 @@
+<%= sidebar do |menu| %>
+  <%= menu.element("Nouveau paragraphe", Icons::WHITE_PLUS.html_safe, :new_admin_index_path) %>
+<% end %>
+
+<h2>Gestion de la page d'accueil</h2>
+<section>
+  <table>
+    <thead>
+      <tr>
+        <th class="text-column">Titre</th>
+        <th class="text-column">Paragraphe</th>
+        <th class="value-column">Position</th>
+        <th class="value-column">Annonce?</th>
+        <th class="action-column">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @indexes.each do |index| %>
+        <tr>
+          <td class="text-column"><%= index.title %></td>
+          <td class="text-column"><%= index.paraph %></td>
+          <td class="value-column"><%= index.rank %></td>
+          <td class="value-column"><%= display_boolean(index.important) %></td>
+          <td class="action-column">
+            <%= link_to Icons::EYE.html_safe, admin_index_url(index.id) %>
+            <%= link_to Icons::PENCIL.html_safe, edit_admin_index_url(index.id) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</section>

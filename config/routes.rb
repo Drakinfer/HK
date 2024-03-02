@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :indices, :admin
+  end
   devise_for :users
 
   root 'home#index'
