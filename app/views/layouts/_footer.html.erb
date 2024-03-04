@@ -1,0 +1,58 @@
+<section id="footer">
+  <article id="footer-info">
+    <p>Hakai Kousen est une encyclopédie Pokemon communautaire adaptant certaines informations pour le jeu de role.</p>
+    <p>Les personnages, le thème "Pokémon ®" et ses marques dérivées sont propriétés de © Nintendo, The Pokémon Company, Game Freak, Creatures.</p>
+    <p>Le présent site web n'est pas le site francophone officiel de Pokémon. Il n'a pas de but lucratif. Il s'agit d'un site communautaire créé par et pour des fans de Pokémon.</p>
+    <p>Ce site est disponible sous licence <%= link_to "Paternité - Pas d'Utilisation Commerciale - Partage des Conditions Initiales à l'Identique 3.0", "https://creativecommons.org/licenses/by-nc-sa/3.0/" %> sauf mention contraire.</p>
+  </article>
+  <article id="footer-nav">
+    <ul class="">
+      <li class="nav-item">
+        <%= link_to "Accueil", home_index_path, {:class => "nav-link"} %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Pokédex", home_index_path, {:class => "nav-link"} %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Livres", home_index_path, {:class => "nav-link"} %>
+      </li>
+      <li class="nav-item">
+        <%= link_to image_tag("discord_logo.png", {:class => "logo-nav"}), home_index_path, {:class => "nav-link"} %>
+      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Mon compte", home_index_path, {:class => "nav-link"} %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "S'inscrire", new_user_registration_path, {:class => "nav-link"} %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Se connecter", new_user_session_path, {:class => "nav-link"} %>
+        </li>
+      <% end %>
+
+      <% if user_signed_in? && current_user.role >= 1 %>
+        <li class="nav-item">
+          <%= link_to "Admin", admin_admin_index_path, {:class => "nav-link"} %>
+        </li>
+      <% end %>
+    </ul>
+  </article>
+  <article id="footer-legal">
+    <ul>
+      <li class="nav-item">
+        <%= link_to "Mentions Légales", destroy_user_session_path, method: :delete, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "L'équipe Hakai Kousen", destroy_user_session_path, method: :delete, class: "nav-link" %>
+      </li>
+    </ul>
+  </article>
+  <article id="footer-licences">
+    <%= link_to image_tag("licence.png"), "https://creativecommons.org/licenses/by-nc-sa/3.0/" %>
+  </article>
+</section>
