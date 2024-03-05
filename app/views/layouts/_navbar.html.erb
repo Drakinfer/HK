@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-lg bg-red">
-  <section class="container-fluid">
+  <section class="container-fluid w-100 bg-red br-5">
     <%= image_tag("logo.png", {:class => "logo-nav"}) %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <section class="collapse navbar-collapse" id="navbarSupportedContent">
+    <section class="collapse navbar-collapse w-100" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <%= link_to "Accueil", home_index_path, {:class => "nav-link"} %>
