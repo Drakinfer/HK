@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :indices, :admin
+    get 'admin/index'
+    resources :types do
+      member do
+        post :toggle_type_active
+      end
+    end
   end
   devise_for :users
 

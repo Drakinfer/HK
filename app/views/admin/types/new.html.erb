@@ -1,0 +1,5 @@
+<%= sidebar do |menu| %>
+  <%= menu.element("Retour à la liste", Icons::WHITE_ARROW_LEFT.html_safe, :admin_types_path) %>
+<% end %>
+<h2>Nouveau type</h2>
+<%= render partial: "admin/types/form" %>

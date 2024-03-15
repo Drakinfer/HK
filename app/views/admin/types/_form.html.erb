@@ -1,0 +1,43 @@
+<% url = admin_types_path if action_name == "new" %>
+<% method = :post if action_name == "new" %>
+
+<% url = admin_type_url if action_name == "edit" %>
+<% method = :put if action_name == "edit" %>
+
+<% i = 0 %>
+
+<%= form_with model: @type, url: url, method: method, data: { turbo: false }, class: "w-75" do |form| %>
+  <div class="mb-2 d-flex">
+    <div>
+      <%= form.label "Nom" %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="ms-2">
+      <%= form.label "Génération" %>
+      <%= select_tag "type[generation_id]", options_for_select(@generations.collect{|x| [x.name,x.id]}) %>
+    </div>
+  </div>
+
+  <% @attr.each do |attr, translation| %>
+    <% if i % 6 == 0 %>
+      <div class="d-flex mb-2">
+    <% end %>
+
+    <div class="center-column w-100">
+      <%= form.label attr.to_sym, translation, class: "label-type #{attr} mb-1" %>
+      <%= form.number_field attr.to_sym, class: "w-50 text-center", min: 0, max: 100, step: 'any' %><br>
+    </div>
+
+    <% if (i + 1) % 6 == 0 %>
+      </div>
+    <% end %>
+    <% i += 1 %>
+  <% end %>
+  <% if i % 6 != 0 %>
+    </div>
+  <% end %>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

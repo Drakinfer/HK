@@ -168,6 +168,11 @@ h3{
   padding: 15px;
 }
 
+.footer-width{
+  width: calc(100vw - $sidebar-width) !important;
+  margin-left: $sidebar-width;
+}
+
 #footer-info{
   width: 60%;
   display: flex;
@@ -198,4 +203,112 @@ h3{
 
 .br-5{
   border-radius: 5px;
+}
+
+.label-type{
+  border: $red 1px solid;
+  border-radius: 5px;
+  width: 75%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.steel{
+  background-color: $acier;
+  color: black;
+}
+
+.fighting{
+  background-color: $combat;
+  color: white;
+}
+
+.dragon{
+  background-color: $dragon;
+  color: white;
+}
+
+.water{
+  background-color: $eau;
+  color: black;
+}
+
+.electric{
+  background-color: $electrik;
+  color: black;
+}
+
+.fire{
+  background-color: $feu;
+  color: black;
+}
+
+.fairy{
+  background-color: $fee;
+  color: black;
+}
+
+.ice{
+  background-color: $glace;
+  color: black;
+}
+
+.bug{
+  background-color: $insecte;
+  color: black;
+}
+
+.normal{
+  background-color: $normal;
+  color: black;
+}
+
+.grass{
+  background-color: $plante;
+  color: black;
+}
+
+.poison{
+  background-color: $poison;
+  color: white;
+}
+
+.psychic{
+  background-color: $psy;
+  color: black;
+}
+
+.rock{
+  background-color: $roche;
+  color: black;
+}
+
+.ground{
+  background-color: $sol;
+  color: black;
+}
+
+.ghost{
+  background-color: $spectre;
+  color: white;
+}
+
+.dark{
+  background-color: $tenebres;
+  color: white;
+}
+
+.flying{
+  background-color: $vol;
+  color: black;
+}
+
+.center-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.deactivate-color{
+  color: gray;
 }
