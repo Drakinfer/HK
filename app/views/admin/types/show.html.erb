@@ -1,0 +1,29 @@
+<%= sidebar do |menu| %>
+  <%= menu.element("Retour à l'index", Icons::WHITE_ARROW_LEFT.html_safe, :admin_types_path) %>
+  <%= menu.element("Éditer", Icons::WHITE_PENCIL.html_safe, :edit_admin_type_path) %>
+  <%= menu.element("Désactiver", Icons::WHITE_LOCK.html_safe, :toggle_type_active_admin_type_path, {:data => {"turbo-method" => :post}}) if @type.active %>
+  <%= menu.element("Activer", Icons::WHITE_UNLOCK.html_safe, :toggle_type_active_admin_type_path, {:data => {"turbo-method" => :post}}) if !@type.active %>
+<% end %>
+
+<h2><%= @type.name %> - <%= @type.generation.name %></h2>
+
+<div class="w-100">
+  <% i = 0 %>
+  <% @attr.each do |attr, translation| %>
+    <% if i % 6 == 0 %>
+      <div class="d-flex mb-2">
+    <% end %>
+
+    <div class="center-column w-100">
+      <label class="label-type <%= attr %> mb-1"><%= translation %></label>
+      <p><%= display_sensibility(@type.send(attr)) %></p>
+    </div>
+
+    <% if (i + 1) % 6 == 0 %>
+      </div> <!-- Close the row after every 6 items -->
+    <% elsif @attr.size == i + 1 %>
+      </div> <!-- Close the row if it's the last item but not a complete row -->
+    <% end %>
+    <% i += 1 %>
+  <% end %>
+</div>

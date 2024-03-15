@@ -219,3 +219,23 @@ fr:
       long: "%A %d %B %Y %Hh%M"
       short: "%d %b %Hh%M"
     pm: pm
+  dex:
+    types:
+      steel: "Acier"
+      fighting: "Combat"
+      dragon: "Dragon"
+      water: "Eau"
+      electric: "Electrik"
+      fire: "Feu"
+      fairy: "Fée"
+      ice: "Glace"
+      bug: "Insecte"
+      normal: "Normal"
+      grass: "Plante"
+      poison: "Poison"
+      psychic: "Psy"
+      rock: "Roche"
+      ground: "Sol"
+      ghost: "Spectre"
+      dark: "Ténèbres"
+      flying: "Vol"

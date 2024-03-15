@@ -1,0 +1,29 @@
+@import "variable";
+
+.navbar{
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $nav-height;
+}
+
+.dropdown-menu{
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+p.dropdown-toggle{
+  margin-bottom: 0;
+}
+
+.dropdown-menu li{
+  margin-left: 10px;
+}
+
+.dropdown-menu li{
+  margin-top: 0;
+}
+
+
