@@ -1,5 +1,5 @@
 <%= sidebar do |menu| %>
-  <%= menu.element("Retour à l'index", Icons::WHITE_ARROW_LEFT.html_safe, :admin_indices_path) %>
+  <%= menu.element("Retour à la liste", Icons::WHITE_ARROW_LEFT.html_safe, :admin_indices_path) %>
   <%= menu.element("Éditer", Icons::WHITE_PENCIL.html_safe, :edit_admin_index_path) %>
   <%= menu.element("Supprimer", Icons::WHITE_TRASH.html_safe, :admin_index_url, data: { "turbo-method": :delete, confirm: 'Êtes-vous sûr ?'}) %>
 <% end %>

@@ -1,0 +1,6 @@
+<%= sidebar do |menu| %>
+  <%= menu.element("Retour à la liste", Icons::WHITE_ARROW_LEFT.html_safe, :admin_generations_path) %>
+  <%= menu.element("Voir la génération", Icons::WHITE_EYE.html_safe, :admin_generation_url) %>
+<% end %>
+<h2>Modifier la génération <%= @generation.name %></h2>
+<%= render partial: "admin/generations/form" %>

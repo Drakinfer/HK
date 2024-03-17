@@ -1,0 +1,30 @@
+<%= sidebar do |menu| %>
+  <%= menu.element("Nouveau type", Icons::WHITE_PLUS.html_safe, :new_admin_type_path) %>
+<% end %>
+
+<h2>Gestion des types</h2>
+<table id="table-type">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Génération</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @types.each do |type| %>
+      <tr class="<%= "deactivate-color" unless type.active %>">
+        <td><%= type.name %></td>
+        <td><%= type.generation.name %></td>
+        <td>
+          <%= link_to Icons::EYE.html_safe, admin_type_path(type.id) %>
+          <% if type.active %>
+            <%= link_to Icons::PENCIL.html_safe, edit_admin_type_path(type.id) %>
+          <% else %>
+            <%= link_to Icons::UNLOCK.html_safe, toggle_type_active_admin_type_path(type.id), :data => {"turbo-method" => :post} %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,5 +1,5 @@
 <%= sidebar do |menu| %>
-  <%= menu.element("Retour à l'index", Icons::WHITE_ARROW_LEFT.html_safe, :admin_types_path) %>
+  <%= menu.element("Retour à la liste", Icons::WHITE_ARROW_LEFT.html_safe, :admin_types_path) %>
   <%= menu.element("Éditer", Icons::WHITE_PENCIL.html_safe, :edit_admin_type_path) %>
   <%= menu.element("Désactiver", Icons::WHITE_LOCK.html_safe, :toggle_type_active_admin_type_path, {:data => {"turbo-method" => :post}}) if @type.active %>
   <%= menu.element("Activer", Icons::WHITE_UNLOCK.html_safe, :toggle_type_active_admin_type_path, {:data => {"turbo-method" => :post}}) if !@type.active %>
