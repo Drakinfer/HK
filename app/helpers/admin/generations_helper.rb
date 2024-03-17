@@ -1,0 +1,2 @@
+module Admin::GenerationsHelper
+end

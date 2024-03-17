@@ -8,9 +8,6 @@
     <tr>
       <th>Nom</th>
       <th>Génération</th>
-      <% @attr.each do |attr, translation| %>
-        <th><%= translation %></th>
-      <% end %>
       <th>Actions</th>
     </tr>
   </thead>
@@ -19,12 +16,13 @@
       <tr class="<%= "deactivate-color" unless type.active %>">
         <td><%= type.name %></td>
         <td><%= type.generation.name %></td>
-        <% @attr.each do |attr, translation| %>
-          <td><%= display_sensibility(type.send(attr)) %></td>
-        <% end %>
         <td>
           <%= link_to Icons::EYE.html_safe, admin_type_path(type.id) %>
-          <%= link_to Icons::PENCIL.html_safe, edit_admin_type_path(type.id) %>
+          <% if type.active %>
+            <%= link_to Icons::PENCIL.html_safe, edit_admin_type_path(type.id) %>
+          <% else %>
+            <%= link_to Icons::UNLOCK.html_safe, toggle_type_active_admin_type_path(type.id), :data => {"turbo-method" => :post} %>
+          <% end %>
         </td>
       </tr>
     <% end %>

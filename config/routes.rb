@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :indices, :admin
+    resources :indices, :admin, :generations
     get 'admin/index'
     resources :types do
       member do

@@ -1,0 +1,25 @@
+<%= sidebar do |menu| %>
+  <%= menu.element("Nouvelle génération", Icons::WHITE_PLUS.html_safe, :new_admin_generation_path) %>
+<% end %>
+
+<h2>Gestion des types</h2>
+<table id="table-type">
+  <thead>
+  <tr>
+    <th>Nom</th>
+    <th>Rang</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @generations.each do |generation| %>
+    <tr>
+      <td><%= generation.name %></td>
+      <td><%= generation.rank %></td>
+      <td>
+        <%= link_to Icons::PENCIL.html_safe, edit_admin_generation_path(generation.id) %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

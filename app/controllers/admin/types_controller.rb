@@ -1,6 +1,6 @@
 class Admin::TypesController < ApplicationController
   def index
-    @types = Type.all.order(:name)
+    @types = Type.joins(:generation).order('generations.name')
     @attr = Type.attributes_sorted
   end
 
@@ -12,7 +12,7 @@ class Admin::TypesController < ApplicationController
   def new
     @type = Type.new
     @attr = Type.attributes_sorted
-    @generations = Generation.all
+    @generations = Generation.by_rank
   end
 
   def create
@@ -31,7 +31,7 @@ class Admin::TypesController < ApplicationController
   def edit
     @type = Type.find(params[:id])
     @attr = Type.attributes_sorted
-    @generations = Generation.all
+    @generations = Generation.by_rank
   end
 
   def update
